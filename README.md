@@ -1,7 +1,7 @@
 # Book-Shop-using-tkinter
 A Book Shop using python, tkinter and sqlite3 as the database, 4 sections - manga, fiction, novels, horror
 
-<img width="960" alt="image" src="https://user-images.githubusercontent.com/64658309/229347562-201b0e51-35fe-4ab1-bd58-d6d79e0d37e5.png">
+
 
    1st window:
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/64658309/229347562-201b0e51-35fe-4ab1-bd58-d6d79e0d37e5.png">
