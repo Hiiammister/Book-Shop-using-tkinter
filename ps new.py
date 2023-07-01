@@ -4,8 +4,10 @@ import os
 import sqlite3
 from random import randint, randrange
 import tkinter.messagebox
+import webbrowser
+
 root=Tk()
-root.wm_title("project")
+root.wm_title("A mystical Book Shop")
 root.wm_iconbitmap("TCET_Logo_Transparent_Bg.ico")
 root.geometry('1920x1080+0+0')
 
@@ -14,6 +16,7 @@ root.configure(bg='#EEAA00')
 C =Canvas(root, height=3840, width=2160)
 
 def Novels():
+   
     books = {"Wuthering Heights , price : 2900": 2900, " Middlemarch , price: 4000": 4000, "Nineteen Eighty-Four , price : 4900": 4900, "The Lord of the Rings , price : 7000": 7000, "Diary of a Nobody, price: 5600": 5600}
     variable = StringVar()
     variable.set(list(books.keys())[0])
@@ -61,6 +64,7 @@ def Novels():
     Window9=Toplevel(root)
     Window9.geometry('1920x1080')
     Window9.state('zoomed')
+    Window9.wm_iconbitmap("TCET_Logo_Transparent_Bg.ico")
     C10 =Canvas(Window9, height=3840, width=2160)
     img=PhotoImage(file = "novels.gif")
     C10.create_image(700,350,anchor=CENTER,image=img)
@@ -107,6 +111,7 @@ def Novels():
     
 
 def Fiction():
+    
     books = {"Age of Vice , price : 2600": 2600, "City Under One Roof , price: 3800": 3800, "Dune , price : 4800": 4800, "The Hitchhiker's Guide to the Galaxy , price : 5500": 5500, "Fahrenheit 451, price: 5600": 5600}
     variable = StringVar()
     variable.set(list(books.keys())[0])
@@ -152,6 +157,7 @@ def Fiction():
             conn.close()
     Window8=Toplevel(root)
     Window8.geometry('1920x1080')
+    Window8.wm_iconbitmap("TCET_Logo_Transparent_Bg.ico")
     Window8.state('zoomed')
     C9 =Canvas(Window8, height=3840, width=2160)
     img=PhotoImage(file = "fiction.gif")
@@ -199,6 +205,7 @@ def Fiction():
 
 def Horror():
     
+    
     def delete():
         Window7.destroy()
     def connect():
@@ -241,9 +248,11 @@ def Horror():
     books = {"The Haunting of Hill House: 2000": 2000, "Dracula, price: 3000": 3000, "Mexican Gothic, price: 3500": 3500, "The Stand, price: 4500": 4500, "Caroline, price: 5000": 5000}
     variable = StringVar()
     variable.set(list(books.keys())[0])
+    
     Window7=Toplevel(root)
     Window7.geometry('1920x1080')
     Window7.state('zoomed')
+    Window7.wm_iconbitmap("TCET_Logo_Transparent_Bg.ico")
     C8 =Canvas(Window7, height=3840, width=2160)
     img=PhotoImage(file = "nun2.gif")
     C8.create_image(700,350,anchor=CENTER,image=img)
@@ -290,6 +299,7 @@ def Horror():
 
 
 def Manga():
+    
     books = {"Attack On Titan, price: 2000": 2000, "Berserk, price: 3000": 3000, "Chainsaw Man, price: 3500": 3500, "Dragon ball Z, price: 4500": 4500, "Echanted, price: 5000": 5000}
     variable = StringVar()
     variable.set(list(books.keys())[0])
@@ -339,6 +349,7 @@ def Manga():
     Window6=Toplevel(root)
     Window6.geometry('1920x1080')
     Window6.state('zoomed')
+    Window6.wm_iconbitmap("TCET_Logo_Transparent_Bg.ico")
     C7 =Canvas(Window6, height=3840, width=2160)
     img=PhotoImage(file = "bnha.gif")
     C7.create_image(800,150,anchor=CENTER,image=img)
@@ -388,9 +399,11 @@ def Buy():
     def NewScreen():
         def delete():
             Window4.destroy()
+
         Window4=Toplevel(root)
         Window4.geometry('1920x1080')
         Window4.state('zoomed')
+        Window4.wm_iconbitmap("TCET_Logo_Transparent_Bg.ico")
         C5 =Canvas(Window4, height=3840, width=2160)
         img=PhotoImage(file = "book1.gif")
         C5.create_image(800,150,anchor=CENTER,image=img)
@@ -416,6 +429,7 @@ def Buy():
     Window3=Toplevel(root)
     Window3.state('zoomed')
     Window3.geometry('1920x1080')
+    Window3.wm_iconbitmap("TCET_Logo_Transparent_Bg.ico")
     C3 =Canvas(Window3, height=3840, width=2160)
     img=PhotoImage(file = "library.gif")
     C3.create_image(800,150,anchor=CENTER,image=img)
@@ -438,6 +452,7 @@ def Buy():
 
 
 def Resolution():
+    
     def oR0():
         root.geometry('1920x1080')
         Window1.destroy()
@@ -455,6 +470,7 @@ def Resolution():
     Window1=Toplevel(root)
     Window1.state('zoomed')
     Window1.geometry('1920x1080')
+    Window1.wm_iconbitmap("TCET_Logo_Transparent_Bg.ico")
     C2 =Canvas(Window1, height=3840, width=2160)
     img=PhotoImage(file = "library.gif")
     C2.create_image(800,150,anchor=CENTER,image=img)
@@ -474,6 +490,7 @@ def Resolution():
     Window1.mainloop()
 
 def settings():
+    
     def delete():
         Window.destroy()
     
@@ -481,6 +498,7 @@ def settings():
     Window = Toplevel(root)
     Window.state('zoomed')
     Window.geometry('1920x1080')
+    Window.wm_iconbitmap("TCET_Logo_Transparent_Bg.ico")
     C1 =Canvas(Window, height=3840, width=2160)
     img=PhotoImage(file = "library.gif")
     C1.create_image(800,150,anchor=CENTER,image=img)
@@ -494,17 +512,27 @@ def settings():
     button5.place(relx=0.9, rely= 0.85)
     C1.pack()
     Window.mainloop()
+
+def Git():
+    webbrowser.open_new(r"https://github.com/Hiiammister")
+    
+    
     
 def mainscreen():
+    def exit1():
+        gans=tkinter.messagebox.askquestion("Exit", "Are you sure you want to exit the Book Shop 🥲 ?")
+        if gans=="yes":
+            root.destroy()
+        
 
-    menu=Menu(root)
+    #menu=Menu(root)
 
-    root.config(menu=menu)
-    filemenu=Menu(menu)
-    menu.add_cascade(label='file', menu=filemenu)
-    filemenu.add_command(label="New")
-    filemenu.add_command(label="Open")
-    filemenu.add_command(label="Exit")
+    #root.config(menu=menu)
+    #filemenu=Menu(menu)
+    #menu.add_cascade(label='file', menu=filemenu)
+    #filemenu.add_command(label="New")
+    #filemenu.add_command(label="Open")
+    #filemenu.add_command(label="Exit")
 
     img=PhotoImage(file = "library.gif")
     C.create_image(800,150,anchor=CENTER,image=img)
@@ -520,15 +548,22 @@ def mainscreen():
     #Welcome1.place(relx = 0.5, rely = 0.4, anchor=CENTER)
 
     Button1=Button(C,bg="#4D934D", text="Start Shopping!!", font="Times  20", relief="raised", command=Buy) 
-    Button1.place(relx=0.5, rely= 0.55, anchor=CENTER)
+    Button1.place(relx=0.5, rely= 0.45, anchor=CENTER)
 
-    Button2=Button(C, bg="#4D934D", text="Settings", font="Times 20", relief="raised", command=settings)
+    Button2=Button(C, bg="#4D934D", text="Settings ⚙️ ", font="Times 20", relief="raised", command=settings)
+    Button2.place(relx=0.5, rely=0.55, anchor=CENTER)
+
+    Button2=Button(C, bg="#4D934D", text="About Us (Github)", font="Times 20", relief="raised", command=Git)
     Button2.place(relx=0.5, rely=0.65, anchor=CENTER)
 
-    acc=Label(C,relief="groove", bg="#80B280", text="Made by:  18 Aditya Borkar ", font="Times 15")
+    Button3=Button(C, bg="#4D934D", text="------Exit------", font="Times 20", relief="raised", command=exit1)
+    Button3.place(relx=0.5, rely=0.75, anchor=CENTER)
+
+    acc=Label(C,relief="groove", bg="#80B280", text="Made by:  18 Aditya Borkar, 17 Sneha Biyala, 19 Hitanshu Budhdev, 20 Durgesh Chaudhari  ", font="Times 15")
     acc.place(relx= 0.5, rely = 0.9, anchor=CENTER)
 
     C.pack()
     root.mainloop()
 if __name__ == "__main__":
     mainscreen()
+
